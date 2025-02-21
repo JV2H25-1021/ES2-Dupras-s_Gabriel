@@ -6,22 +6,13 @@
             "id": "58936fad-7458-462f-b014-498f148ec624",
             "actions": [
                 {
-                    "name": "Mouvement Z",
-                    "type": "Button",
+                    "name": "Mouvement",
+                    "type": "Value",
                     "id": "f1cd4a16-6890-481f-b5be-6c99fdd9cdd6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Mouvement Y",
-                    "type": "Button",
-                    "id": "0ca4e3f2-ccbb-4375-be39-87d6e1a4e214",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Acceleration",
@@ -36,28 +27,6 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "ab5e8334-8c53-4bce-81a7-bfdda01370e0",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Mouvement Z",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a429b5cb-88ee-4f77-b618-52414f07b0d4",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Mouvement Z",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8e6dc0c0-972b-4c13-a980-345f8850d1f2",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
@@ -68,26 +37,59 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "6e38ad21-ca39-4cfe-aced-d7aeb84bc077",
+                    "name": "2D Vector",
+                    "id": "ca1fef4c-3b06-4436-82ae-853bd553741e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouvement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "06f925eb-b56a-46db-be76-070724496458",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Mouvement Y",
+                    "action": "Mouvement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "03bb2b1c-4bc0-479e-9d05-1c2f44ce2049",
+                    "name": "down",
+                    "id": "f36c03ff-1263-4bd4-a8e2-b40d680d644c",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Mouvement Y",
+                    "action": "Mouvement",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "60fd7e7b-4db0-40b5-9c05-d43ce0d7ba98",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Mouvement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "9204af5d-bf29-4b41-ad77-6d9416382a63",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Mouvement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
