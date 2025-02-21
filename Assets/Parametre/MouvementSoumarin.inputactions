@@ -6,7 +6,7 @@
             "id": "58936fad-7458-462f-b014-498f148ec624",
             "actions": [
                 {
-                    "name": "Mouvement",
+                    "name": "MouvementY",
                     "type": "Value",
                     "id": "f1cd4a16-6890-481f-b5be-6c99fdd9cdd6",
                     "expectedControlType": "Vector2",
@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MouvementZ",
+                    "type": "Value",
+                    "id": "b313a917-494e-41ef-baf4-051ecbab2c6e",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -43,7 +52,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Mouvement",
+                    "action": "MouvementY",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -54,7 +63,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Mouvement",
+                    "action": "MouvementY",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -65,29 +74,84 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Mouvement",
+                    "action": "MouvementY",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
                     "id": "60fd7e7b-4db0-40b5-9c05-d43ce0d7ba98",
-                    "path": "<Keyboard>/s",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Mouvement",
+                    "action": "MouvementY",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
                     "id": "9204af5d-bf29-4b41-ad77-6d9416382a63",
-                    "path": "<Keyboard>/w",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Mouvement",
+                    "action": "MouvementY",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "22079e50-b64c-4f70-a3e8-688558413944",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouvementZ",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "cbdeae4b-e098-4c9a-a623-dc01f8ffc814",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouvementZ",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "1b8fdbec-31eb-402c-b850-cf0a56ec3e1e",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouvementZ",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "bf263aa6-011b-413b-bf45-87252b54fa0f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouvementZ",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "55eba13c-b9f5-4d79-92f8-279abb75d37e",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouvementZ",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

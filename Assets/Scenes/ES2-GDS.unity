@@ -1829,7 +1829,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vitesse: 0.5
-  _modifierAnimTranslation: 1.25
+  _sousmarin: {fileID: 3635746710492279696}
+  _modifierAnimTranslation: 0.5
 --- !u!114 &8632670369948054856
 MonoBehaviour:
   m_ObjectHideFlags: 0

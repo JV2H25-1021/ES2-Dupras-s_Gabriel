@@ -11,6 +11,8 @@ public class SousmarinMouvement : MonoBehaviour
     private Rigidbody _rb;
     private Vector3 directionInput;
 
+    [SerializeField] private GameObject _sousmarin;
+
     [SerializeField] private float _modifierAnimTranslation;
     private Animator _animator;
 
@@ -18,18 +20,43 @@ public class SousmarinMouvement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-    }
-
-    private void OnMouvement(InputValue directionBase)
-    {
-        Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesse;
-        directionInput = new Vector3(0f, directionAvecVitesse.y, directionAvecVitesse.x);
+        _animator.SetBool("Deplacement", false);
+        _animator.SetBool("Altitude", false);
     }
 
     private void OnMouvementY(InputValue directionBase)
     {
         Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesse;
         directionInput = new Vector3(0f, directionAvecVitesse.y, directionAvecVitesse.x);
+
+        if (directionAvecVitesse.y != 0f)
+            {
+            _animator.SetBool("Altitude", true);
+            }
+        else
+        {
+            _animator.SetBool("Altitude", false);
+        }
+    }
+
+    private void OnMouvementZ(InputValue directionBase)
+    {
+        Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesse;
+        directionInput = new Vector3(0f, directionAvecVitesse.y, directionAvecVitesse.x);
+
+        if (directionAvecVitesse.x != 0f)
+        {
+            _animator.SetBool("Deplacement", true);
+        }
+        else
+        {
+            _animator.SetBool("Deplacement", false);
+        }
+    }
+
+    private void OnAcceleration(InputAction press) 
+    {
+         ;
     }
     private void FixedUpdate()
     {
@@ -37,8 +64,8 @@ public class SousmarinMouvement : MonoBehaviour
 
         _rb.AddForce(mouvement, ForceMode.VelocityChange);
 
-        Vector3 vitesseSurPlane = new Vector3(0f, _rb.velocity.y, _rb.velocity.x);
-        _animator.SetFloat("vitesse", vitesseSurPlane.magnitude * _modifierAnimTranslation);
-        _animator.SetFloat("Deplacement", vitesseSurPlane.magnitude);
+        Vector3 vitesseSurPlane = new Vector3(0f, _rb.velocity.y, _rb.velocity.z);
+        _animator.SetFloat("Vitesse", vitesseSurPlane.magnitude * _modifierAnimTranslation);
+
     }
 }
