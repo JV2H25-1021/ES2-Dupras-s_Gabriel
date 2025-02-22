@@ -1828,7 +1828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc58d4b036dfb44397e3b68ef423a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vitesse: 0.5
+  _vitesseX: 0.5
+  _vitesseY: 0.5
+  _acceleration: 2
   _sousmarin: {fileID: 3635746710492279696}
   _modifierAnimTranslation: 1
 --- !u!114 &8632670369948054856

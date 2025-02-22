@@ -7,7 +7,9 @@ using UnityEngine.Windows;
 
 public class SousmarinMouvement : MonoBehaviour
 {
-    [SerializeField] private float _vitesse;
+    [SerializeField] private float _vitesseX;
+    [SerializeField] private float _vitesseY;
+    [SerializeField] private float _acceleration;
     private Rigidbody _rb;
     private Vector3 directionInput;
 
@@ -15,54 +17,34 @@ public class SousmarinMouvement : MonoBehaviour
 
     [SerializeField] private float _modifierAnimTranslation;
     private Animator _animator;
-    private Vector3 _vitesseSurPlane;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-        _animator.SetBool("Deplacement", false);
-        _animator.SetBool("Altitude", false);
     }
 
-    private void OnPressAcceleration() 
+    private void OnPressAcceleration(InputAction press)
     {
-        _vitesse += 0.5f;
+        
     }
 
-    private void OnReleaseAcceleration()
+    private void OnReleaseAcceleration(InputAction release)
     {
-        _vitesse -= 0.5f;
+        
     }
 
     private void OnMouvementY(InputValue directionBase)
     {
-        Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesse;
+        Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesseY;
         directionInput = new Vector3(0f, directionAvecVitesse.y, directionAvecVitesse.x);
-
-        if (directionAvecVitesse.y != 0f)
-        {
-            _animator.SetBool("Altitude", true);
-        }
-        else
-        {
-            _animator.SetBool("Altitude", false);
-        }
     }
 
     private void OnMouvementZ(InputValue directionBase)
     {
-        Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesse;
+        Vector2 directionAvecVitesse = directionBase.Get<Vector2>() * _vitesseX;
         directionInput = new Vector3(0f, directionAvecVitesse.y, directionAvecVitesse.x);
 
-        if (directionAvecVitesse.x != 0f)
-        {
-            _animator.SetBool("Deplacement", true);
-        }
-        else
-        {
-            _animator.SetBool("Deplacement", false);
-        }
     }
 
     private void FixedUpdate()
@@ -71,8 +53,11 @@ public class SousmarinMouvement : MonoBehaviour
 
         _rb.AddForce(mouvement, ForceMode.VelocityChange);
 
-        _vitesseSurPlane = new Vector3(0f, _rb.velocity.y, _rb.velocity.z);
-        _animator.SetFloat("Vitesse", _vitesseSurPlane.magnitude * _modifierAnimTranslation);
+        Vector3 vitesseSurPlane = new Vector3(0f, _rb.velocity.y, _rb.velocity.z);
+        _animator.SetFloat("VitesseX", vitesseSurPlane.z * _modifierAnimTranslation);
+        _animator.SetFloat("VitesseY", vitesseSurPlane.y * _modifierAnimTranslation);
+        _animator.SetFloat("DeplacementX", vitesseSurPlane.z * _modifierAnimTranslation);
+        _animator.SetFloat("AltitudeY", vitesseSurPlane.y * _modifierAnimTranslation);
 
     }
 }
