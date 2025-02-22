@@ -15,15 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Acceleration",
-                    "type": "Button",
-                    "id": "19291234-cdb9-4964-aaaa-0cac311d009a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "MouvementZ",
                     "type": "Value",
                     "id": "b313a917-494e-41ef-baf4-051ecbab2c6e",
@@ -31,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Acceleration",
+                    "type": "Button",
+                    "id": "19291234-cdb9-4964-aaaa-0cac311d009a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
