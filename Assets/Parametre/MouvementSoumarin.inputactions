@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Acceleration",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "19291234-cdb9-4964-aaaa-0cac311d009a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=2)",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
